@@ -34,17 +34,4 @@ jobs:
       # - name: Run tests
       #   run: flutter test
 
-      - name: Build app for web
-        run: flutter build web
-
-      - name: Setup java for android app
-        uses: actions/setup-java@v2
-        with:
-          distribution: "zulu"
-          java-version: "11"
       
-      - name: Build APK for android app
-        run: flutter build apk
-
-      - name: Build appbundle for android app
-        run: flutter build appbundle

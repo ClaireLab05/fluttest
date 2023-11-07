@@ -1,0 +1,16 @@
+name: To build Web
+
+on:
+  workflow_run:
+    workflows: ["My first workflow"]
+    branches: [main]
+    types: 
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Build app for web
+        run: flutter build web

@@ -1,0 +1,17 @@
+name: To build Ios
+
+on:
+  workflow_run:
+    workflows: ["My first workflow"]
+    branches: [main]
+    types: 
+      - completed
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Build app for ios
+        run: flutter build ios --release --no-codesign
+     
