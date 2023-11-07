@@ -174,7 +174,6 @@ class _InputBottomAppBarState extends State<InputBottomAppBar> {
     );
   }
 
- 
   ///Ajoute une image à la conversation
   void _addImage(ImageSource source) async {
     try {
