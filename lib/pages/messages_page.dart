@@ -96,7 +96,7 @@ class _InputBottomAppBarState extends State<InputBottomAppBar> {
           children: [
             //Bouton "+" pour ajouter du contenu au message
             GestureDetector(
-              onTap: _addImage(ImageSource.gallery),
+              onTap: () => _addImage(ImageSource.gallery),
               child: Container(
                 height: 30,
                 width: 30,
@@ -115,7 +115,7 @@ class _InputBottomAppBarState extends State<InputBottomAppBar> {
               width: 5,
             ),
             GestureDetector(
-              onTap: _addImage(ImageSource.camera),
+              onTap: () => _addImage(ImageSource.camera),
               child: Container(
                 height: 30,
                 width: 30,
