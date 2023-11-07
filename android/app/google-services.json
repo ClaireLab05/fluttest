@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "721999817244",
+    "project_id": "fludbb",
+    "storage_bucket": "fludbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721999817244:android:74921738b332cc4f924dd9",
+        "android_client_info": {
+          "package_name": "com.example.fluttest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPN3hgLOYVcfnlODLnzmotFO34QBv1Ses"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
