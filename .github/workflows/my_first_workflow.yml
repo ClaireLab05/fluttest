@@ -49,19 +49,18 @@ jobs:
       #- name: Build appbundle for android app
       #  run: flutter build appbundle
       
-      - name: deploy hosting
+      - name: Deploy hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUDBB }}'
           projectId: fludbb
 
+      - run: npm install firebase-tools
       - run: firebase deploy --only hosting
 
-
-
-  build-ios:
-    runs-on: macos-latest
-    steps:
-      - name: Build app for ios
-        run: flutter build ios --release --no-codesign
+  #build-ios:
+  #  runs-on: macos-latest
+  #  steps:
+  #    - name: Build app for ios
+  #      run: flutter build ios --release --no-codesign
