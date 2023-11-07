@@ -36,3 +36,31 @@ jobs:
 
       - name: Build app for web
         run: flutter build web
+
+      #- name: Setup java for android app
+      #  uses: actions/setup-java@v2
+      #  with:
+      #    distribution: "zulu"
+      #    java-version: "11"
+      
+      #- name: Build APK for android app
+      #  run: flutter build apk
+
+      #- name: Build appbundle for android app
+      #  run: flutter build appbundle
+      
+      - name: Deploy hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUDBB }}'
+          projectId: fludbb
+
+      - run: npm install firebase-tools
+      - run: firebase deploy --only hosting
+
+  #build-ios:
+  #  runs-on: macos-latest
+  #  steps:
+  #    - name: Build app for ios
+  #      run: flutter build ios --release --no-codesign
