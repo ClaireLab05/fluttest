@@ -124,7 +124,7 @@ class _InputBottomAppBarState extends State<InputBottomAppBar> {
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: const Icon(
-                  Icons.add,
+                  Icons.camera_alt,
                   color: Colors.white,
                   size: 20,
                 ),

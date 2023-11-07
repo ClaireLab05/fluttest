@@ -34,17 +34,33 @@ jobs:
       # - name: Run tests
       #   run: flutter test
 
-  build-web:
-    if: github.ref == 'refs/heads/main'
-    uses: ./.github/workflows/to_build_web.yml
-    needs: build
+      - name: Build app for web
+        run: flutter build web
 
-  build-android:
-    if: github.ref == 'refs/heads/main'
-    uses: ./.github/workflows/to_build_android.yml
-    needs: build
-  
+      - name: Setup java for android app
+        uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: "11"
+      
+      - name: Build APK for android app
+        run: flutter build apk
+
+      - name: Build appbundle for android app
+        run: flutter build appbundle
+
+      - name: build and preview
+        run: npm ci && npm run build
+      
+      - name: hoting deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUDBB }}'
+          projectId: fludbb
+
   build-ios:
-    if: github.ref == 'refs/heads/main'
-    uses: ./.github/workflows/to_build_ios.yml
-    needs: build
+    runs-on: macos-latest
+    steps:
+      - name: Build app for ios
+        run: flutter build ios --release --no-codesign
