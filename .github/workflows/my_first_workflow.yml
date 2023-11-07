@@ -35,10 +35,16 @@ jobs:
       #   run: flutter test
 
   build-web:
+    if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/to_build_web.yml
+    needs: build
 
   build-android:
+    if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/to_build_android.yml
+    needs: build
   
   build-ios:
+    if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/to_build_ios.yml
+    needs: build
