@@ -1,14 +1,10 @@
 name: To build Web
 
 on:
-  workflow_run:
-    workflows: ["My first workflow"]
-    branches: [main]
-    types: 
-      - completed
+  workflow_call:
 
 jobs:
-  on-success:
+  build-web:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
