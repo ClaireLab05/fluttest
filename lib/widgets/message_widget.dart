@@ -46,8 +46,8 @@ abstract class MessageWidget extends StatelessWidget {
   List<Color> _getColors() {
     if (_isMessageFromMe()) {
       return ([
-        Color.fromARGB(255, 128, 235, 125).withOpacity(0.7),
-        Color.fromARGB(255, 128, 235, 125).withOpacity(0.3),
+        const Color.fromARGB(255, 128, 235, 125).withOpacity(0.7),
+        const Color.fromARGB(255, 128, 235, 125).withOpacity(0.3),
       ]);
     } else {
       return ([
