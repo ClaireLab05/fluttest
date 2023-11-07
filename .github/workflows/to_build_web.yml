@@ -3,7 +3,6 @@ name: To build Web
 on:
   workflow_run:
     workflows: ["My first workflow"]
-    branches: [main]
     types: 
       - completed
 
