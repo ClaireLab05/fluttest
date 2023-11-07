@@ -21,7 +21,6 @@ class UsersPage extends ListPage {
     );
   }
 
-  
   @override
   Widget getBody() {
     return FirestoreListView<my_user.User>(

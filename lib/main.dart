@@ -43,19 +43,19 @@ class MyApp extends StatelessWidget {
             return SignInScreen(
               providers: [EmailAuthProvider()],
               actions: [
-              AuthStateChangeAction<SignedIn>((context, state) {
-                //Ajoute ou met à jour l'utilisateur dans la base
-                UsersServices.set(
-                  state.user!.uid,
-                  state.user!.email!,
-                );
-                //Redirige vers la Home Page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (_) => const HomePage()),
-                );
-              }),
-            ],
+                AuthStateChangeAction<SignedIn>((context, state) {
+                  //Ajoute ou met à jour l'utilisateur dans la base
+                  UsersServices.set(
+                    state.user!.uid,
+                    state.user!.email!,
+                  );
+                  //Redirige vers la Home Page
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (_) => const HomePage()),
+                  );
+                }),
+              ],
             );
           },
           HomePage.name: (_) {
