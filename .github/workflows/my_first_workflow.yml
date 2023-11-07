@@ -34,4 +34,11 @@ jobs:
       # - name: Run tests
       #   run: flutter test
 
-      
+  build-web:
+    uses: ./.github/workflows/to_build_web.yml
+
+  build-android:
+    uses: ./.github/workflows/to_build_android.yml
+  
+  build-ios:
+    uses: ./.github/workflows/to_build_ios.yml

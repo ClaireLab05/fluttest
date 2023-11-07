@@ -3,6 +3,7 @@ name: To build Android
 on:
   workflow_run:
     workflows: ["My first workflow"]
+    branches: [main]
     types: 
       - completed
 
